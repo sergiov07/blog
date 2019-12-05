@@ -1,0 +1,40 @@
+<header>
+      <div class="logo-menu">
+        <div class="container">
+          <div class="row between-xs middle-xs center-xs">
+            <div class="logo col-md-3 col-xs-12">
+              <h1 class="no-margin" id="logo">Blog Logo</h1>
+            </div>
+            <nav class="col-md-5 col-xs-12">
+              <ul class="no-list">                 
+                <li class="enl">
+                  <%= link_to "Inicio", root_path %>          
+                </li>
+                <li class="">
+                  <%= link_to "Programacion", "https://google.com.mx" %>
+                </li>
+                <li class="">
+                  Diseño
+                </li>
+                <li class="">
+                  Tecnologia
+                </li>               
+              </ul>
+            </nav>
+
+            <%if user_signed_in?%>
+              <div class = "col-md-3 col-xs-12">                  
+                  <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %>             
+              </div>            
+            <%else%>
+              <div class = "col-md-3 col-xs-12">
+                  <%= link_to "Iniciar Sesion", new_user_session_path %>                  
+                 - <%= link_to "Crear Cuenta", new_user_registration_path %>
+              </div>              
+          </div>
+          <%end%>
+          
+        </div>
+
+      </div>
+    </header>
